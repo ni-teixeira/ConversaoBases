@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+
+body{
+    background-image: url('images/background1.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    font-family: "Playwrite DE Grund", cursive;
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Altura mínima do body */
+    margin: 0; /* Remove margens padrão */
+}
+
+h1{
+    text-align: center;
+}
+
+#container1{
+    background-color: white;
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 20px; /* Adiciona algum espaçamento interno */
+    margin: auto; /* Centraliza horizontalmente */
+}
+
+.inputs{
+    background-color: white;
+    border-color: pink;
+    border-radius: 20px;
+    color: grey;
+}
+
+.select{
+    background-color: pink;
+    border-color: rgb(171, 171, 171);
+    border-radius: 20px;
+    color: white;
+}
+
+.button{
+    background-color: pink;
+    border-color: rgb(227, 227, 227);
+    border-radius: 20px;
+}
+
+.link{
+    background-color: pink;
+    border-color: rgb(227, 227, 227);
+    border-radius: 20px;
+    color: white;
+}
