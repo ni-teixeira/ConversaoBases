@@ -13,32 +13,33 @@
 
 <body>
 
-    <div id="container1">
-        
-        <h1> Conversor de bases</h1>
-        <input id="inputValue" type="text" placeholder="Digite o valor" class="inputs">
-        
-        <select id="inputBase" class="select">
-            <option value="decimal">Decimal</option>
-            <option value="hexadecimal">Hexadecimal</option>
-            <option value="octal">Octal</option>
-            <option value="binario">Binário</option>
-        </select>
-        
-        <h3>Converter para:</h3>
-        <input type="checkbox" id="convertDecimal"><label for="convertDecimal">Decimal</label>
-        <input type="checkbox" id="convertHexadecimal"><label for="convertHexadecimal">Hexadecimal</label>
-        <input type="checkbox" id="convertOctal"><label for="convertOctal">Octal</label>
-        <input type="checkbox" id="convertBinario"><label for="convertBinario">Binário</label>
-       
-        <br><br>
-        
-        <button onclick="converter()" class="button">Converter</button>
-        
-        <div id="output"></div>
-        
-    </div>
+    <div id="card">
+
+        <div id="container1">
+            <h1> Conversor de bases</h1>
+            <div class="input">
+                <input id="inputValue" type="text" placeholder="Digite o valor" class="inputs">
+                <select id="inputBase" class="select">
+                    <option value="decimal">Decimal</option>
+                    <option value="hexadecimal">Hexadecimal</option>
+                    <option value="octal">Octal</option>
+                    <option value="binario">Binário</option>
+                </select>
+            </div>
+
+            <div class="conversion-type">
+                <h3>Converter para:</h3>
+                <input type="checkbox" id="convertDecimal"><label for="convertDecimal">Decimal</label>
+                <input type="checkbox" id="convertHexadecimal"><label for="convertHexadecimal">Hexadecimal</label>
+                <input type="checkbox" id="convertOctal"><label for="convertOctal">Octal</label>
+                <input type="checkbox" id="convertBinario"><label for="convertBinario">Binário</label>
+                
+            </div>        
+            <button onclick="converter()" class="button">Converter</button>
+            <div id="output"></div>
+        </div>
     
+    </div>
 
 </body>
 
