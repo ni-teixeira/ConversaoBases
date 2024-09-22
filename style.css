@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 body{
     background-image: url('images/background1.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o elemento */
-    font-family: "Playwrite DE Grund", cursive;
+    font-family: "Quicksand", sans-serif;
     display: flex; /* Ativa o flexbox */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
@@ -14,6 +14,8 @@ body{
 h1{
     text-align: center;
     margin-bottom: 25px;
+    font-weight: 800;
+    color: pink;
 }
 
 
