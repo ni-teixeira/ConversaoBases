@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Importação da bliblioteca de estilização CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Bases</title>
+</head>
+
+<body>
+
+    <div class="container2">
+        
+        <!-- criar uma div pai-->
+        <div class="container-lg">
+            <!-- div do conteúdo do conversor -->
+            <div id="calculadora" class="container">
+                
+                <!-- titulo -->
+                <h1>Calculadora de Bases</h1>
+                <br><br>
+                
+                <!-- instrução -->
+                <h4>Informe o primeiro número e a sua base:</h4>
+                
+                <!-- input do numero escolhido pelo user -->
+                <input class="form-control inputs" id="iptNumero1" type="text" placeholder="Digite o primeiro valor para calcular"
+                autofocus required="">
+                <br>
+                
+                <!-- lista de opções para serem selecionadas -->
+                <select class="form-select select" id="slctBasePrimeiroNumero">
+                    <option value="" disabled selected hidden>Selecione a base do primeiro número</option>
+                    <option value="10">Decimal</option>
+                    <option value="8">Octal</option>
+                    <option value="2">Binário</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+                <br><br>
+                
+                <!-- instrução -->
+                <h4>Informe o segundo número e a sua base</h4>
+                
+                <!-- input do numero escolhido pelo user -->
+                <input class="form-control inputs" id="iptNumero2" type="text" placeholder="Digite o segundo valor para calcular"
+                    autofocus required="">
+                <br>
+                
+                <!-- lista de opções para serem selecionadas -->
+                <select class="form-select select" id="slctBaseSegundoNumero" >
+                    <option value="" disabled selected hidden>Selecione a base do segundo número</option>
+                    <option value="10">Decimal</option>
+                    <option value="8">Octal</option>
+                    <option value="2">Binário</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+                <br><br>
+                
+                <!-- instrução -->
+                <h4>Qual operação deseja realizar?</h4>
+                
+                <!-- lista de opções para serem selecionadas -->
+                <select class="form-select select" id="slctOperacaoDesejada">
+                    <option value="+">Adição</option>
+                    <option value="-">Subtração</option>
+                    <option value="*">Multiplicação</option>
+                    <option value="/">Divisão</option>
+                    <option value="**">Exponenciação</option>
+                    <option value="1">Todas as operações</option>
+                </select>
+                <br><br>
+                
+                <!-- instrução -->
+                <h4>Qual a base que deve ser retornada na saída? </h4>
+                
+                <!-- lista de opções para serem selecionadas -->
+                <select class="form-select select" id="baseOutput">
+                    <option value="10">Decimal</option>
+                    <option value="8">Octal</option>
+                    <option value="2">Binário</option>
+                    <option value="16">Hexadecimal</option> 
+                </select>
+                <br><br>
+                
+                <!-- Botão para calcular -->
+                <button class="btn btn-lg button" onclick="calcular()">Realizar Cálculo</button>
+                <br>
+                <br>
+                
+                <!-- div de output -->
+                <div id="divOutput"></div>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
+<script src="calculadora.js"></script>
