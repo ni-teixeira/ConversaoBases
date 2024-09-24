@@ -8,32 +8,26 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⋅˚₊‧ 𐙚 ‧₊˚ ⋅</title>
+    <title> ⋅˚₊‧ 𐙚 ‧₊˚ ⋅ </title>
 </head>
 
 <body>
 
     <div class="container2">
         
-        <!-- criar uma div pai-->
         <div class="container-md">
-            <!-- div do conteúdo do conversor -->
             <div id="calculadora" class="container">
                 
-                <!-- titulo -->
                 <h1>Calculadora de Bases</h1>
 
-                
-                <!-- instrução -->
                 <h4>Informe o primeiro número e a sua base:</h4>
-                
-                <!-- input do numero escolhido pelo user -->
+
                 <input class="form-control inputs" id="iptNumero1" type="text" placeholder="Digite o primeiro valor para calcular"
                 autofocus required="">
                 <br>
                 
                 <!-- lista de opções para serem selecionadas -->
-                <select class="form-select select" id="slctBasePrimeiroNumero">
+                <select class="form-select select" id="selectBasePrimeiroNum">
                     <option value="" disabled selected hidden>Selecione a base do primeiro número</option>
                     <option value="10">Decimal</option>
                     <option value="8">Octal</option>
@@ -51,7 +45,7 @@
                 <br>
                 
                 <!-- lista de opções para serem selecionadas -->
-                <select class="form-select select" id="slctBaseSegundoNumero" >
+                <select class="form-select select" id="selectBaseSegundoNum" >
                     <option value="" disabled selected hidden>Selecione a base do segundo número</option>
                     <option value="10">Decimal</option>
                     <option value="8">Octal</option>
@@ -64,13 +58,11 @@
                 <h4>Qual operação deseja realizar?</h4>
                 
                 <!-- lista de opções para serem selecionadas -->
-                <select class="form-select select" id="slctOperacaoDesejada">
+                <select class="form-select select" id="selectOperacaoDesejada">
                     <option value="+">Adição</option>
                     <option value="-">Subtração</option>
                     <option value="*">Multiplicação</option>
                     <option value="/">Divisão</option>
-                    <option value="**">Exponenciação</option>
-                    <option value="1">Todas as operações</option>
                 </select>
                 <br>
                 
@@ -85,12 +77,12 @@
                     <option value="16">Hexadecimal</option> 
                 </select>
         
-                
                 <!-- Botão para calcular -->
                 <button class="btn btn-secondary btn-l button" onclick="calcular()">Realizar Cálculo</button>
 
                 <a href="home.html" class="btn btn-secondary btn-l button">Home page</a>
                 
+                <br>
                 <br>
                 
                 <!-- div de output -->
