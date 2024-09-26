@@ -1,70 +1,61 @@
-// Função principal para calcular o resultado com base nas entradas do usuário
+// funcao principal para calcular o resultado com base nas entradas do usuario
 function calcular() {
+
     const num1 = document.getElementById('iptNumero1').value;
     const base1 = parseInt(document.getElementById('selectBasePrimeiroNum').value);
     const num2 = document.getElementById('iptNumero2').value;
     const base2 = parseInt(document.getElementById('selectBaseSegundoNum').value);
+
     const operacao = document.getElementById('selectOperacaoDesejada').value;
-    const baseOutput = parseInt(document.getElementById('baseOutput').value); // converte uma string em um número inteiro, considerando uma base numérica.
-    
-    // Validação dos números de acordo com suas bases
-    if (!isValidNumber(num1, base1)) {
-        alert(`Número ${num1} não é válido para a base ${base1}.`);
+    const baseOutput = parseInt(document.getElementById('baseOutput').value);
+
+    // validacao dos números de acordo com suas bases
+    if (!isValidNumber(num1,base1) || !isValidNumber(num2, base2)){
+        alert(`Um dos números não é válido para a base.`);
         return;
     }
 
-    if (!isValidNumber(num2, base2)) { // checa se todos os caracteres de um número são válidos para uma base específica.
-        alert(`Número ${num2} não é válido para a base ${base2}.`);
-        return; 
-    }
-
-    // Converte os números de suas bases originais para decimal
+    // converte os numeros de suas bases originais para decimal
     const decimalNum1 = parseInt(num1, base1);
     const decimalNum2 = parseInt(num2, base2);
-    
-    // Variável para armazenar o resultado
-    let resultado; // declara variáveis com escopo de bloco e permite que seus valores sejam alterados.
 
-    // Mapeamento das operações
-    // Define um objeto chamado 'operacoes'
-    const operacoes = {
-    '+': (a, b) => a + b,  // Função que recebe dois parâmetros (a e b) e retorna sua soma
-    '-': (a, b) => a - b,  // Função que recebe dois parâmetros (a e b) e retorna a diferença (a menos b)
-    '*': (a, b) => a * b,  // Função que recebe dois parâmetros (a e b) e retorna o produto (a vezes b)
-    '/': (a, b) => ( b !== 0 ? a / b : 'Erro: Divisão por zero') // Se b não for zero, retorna a divisão; caso contrário, retorna uma mensagem de erro
-};
-    // 'a' e 'b' são nomes de parâmetros que representam os números que serão operados.
+    // executa a operação correspondente
+    const resultado = calcularOperacao(decimalNum1, decimalNum2, operacao);
 
-    // Executa a operação correspondente
-    resultado = operacoes[operacao] ? operacoes[operacao](decimalNum1, decimalNum2) : 'Operação inválida';
-    // Atribui o resultado da operação selecionada à variável 'resultado'
-    // Verifica se existe uma função para o operador selecionado
-    // Se existir, chama a função correspondente com os números convertidos
-    // Se não existir, atribui uma mensagem de erro
-    // ?: Inicia o operador ternário; se a condição anterior for verdadeira, executa o que está após o ?.
+    // converte o resultado de volta para a base de saida e exibe
+    document.getElementById('divOutput').innerHTML = resultado.toString(baseOutput).toUpperCase();
 
-    // Converte o resultado de volta para a base de saída e exibe
-    document.getElementById('divOutput').textContent = resultado.toString(baseOutput).toUpperCase();
 }
 
-    // Função para validar se um número é válido de acordo com a base especificada
-    function isValidNumber(num, base) {
-    const validChars = getValidCharsForBase(base);
+// funcao para calcular a operação
+function calcularOperacao(a, b, operacao) {
+    switch (operacao) { // estrutura de controle que seleciona e executa um bloco dentre multiplas opcoes
+        case '+': return a + b;
+        case '-': return a - b; // executa a operação correspondente usando a e b
+        case '*': return a * b;
+        case '/': return b !== 0 ? a / b : 'Erro: Divisão por zero';
+        default: return 'Operação inválida';
+    }
+}
+
+// funcao para validar se um número e valido de acordo com a base especificada
+function isValidNumber(num, base) {
+    const charValido = obterCharValidos(base);
     for (let char of num) {
-        if (!validChars.includes(char.toUpperCase())) {
+        if (!charValido.includes(char.toUpperCase())) {
             return false;
         }
     }
     return true;
 }
 
-// Função para retornar os caracteres válidos de acordo com a base
-function getValidCharsForBase(base) {
-    const validCharsMap = {
-        2: ['0', '1'], // Binário
-        8: ['0', '1', '2', '3', '4', '5', '6', '7'], // Octal
-        10: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], // Decimal
-        16: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] // Hexadecimal
+// funcao para retornar os caracteres validos de acordo com a base
+function obterCharValidos(base) {
+    const matrizCharValido = {
+        2: ['0', '1'], // binario
+        8: ['0', '1', '2', '3', '4', '5', '6', '7'], // octal
+        10: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], // decimal
+        16: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'] // hexadecimal
     };
-    return validCharsMap[base] || []; // Retorna caracteres válidos ou um array vazio
+    return matrizCharValido[base] || []; // retorna caracteres validos ou um array vazio
 }
